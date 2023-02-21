@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const app = express();
 
+app.set('views', './views');
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
@@ -13,7 +14,7 @@ app.listen(3000, () => {
 })
 
 app.get('/', (req, res) => {
-  res.render('index.ejs');
+  res.render('index');
 })
 
 app.get('/about', (req, res) => {
